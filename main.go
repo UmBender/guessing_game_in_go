@@ -21,15 +21,10 @@ func main() {
 			fmt.Println("Ocorreu um erro na leitura", err)
 			continue
 		}
-		if valorChute > objetivo {
-			fmt.Println("Que pena, seu chute foi muito alto!")
-		}else if valorChute < objetivo {
-			fmt.Println("Que pena, seu chute foi muito baixo!")
-		}else {
-			fmt.Println("Parabéns! Você acertou o número.")
-		}
-		numeroChutes++
 
+		testeValor(objetivo, valorChute)
+
+		numeroChutes++
 	}
 	fmt.Println("O número de chutes foi de", numeroChutes)
 }
@@ -37,7 +32,16 @@ func main() {
 func menuInicial()  {
 	fmt.Println("Bem vindo ao jogo do chute")
 	fmt.Println("Os valores possíveis estão entre 1 e 100")
-	
+}
+
+func testeValor(objetivo int, valorChute int) {
+		if valorChute > objetivo {
+			fmt.Println("Que pena, seu chute foi muito alto!")
+		}else if valorChute < objetivo {
+			fmt.Println("Que pena, seu chute foi muito baixo!")
+		}else {
+			fmt.Println("Parabéns! Você acertou o número.")
+		}
 }
 
 
